@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Middleware", "HealthChecker.Middleware\HealthChecker.Middleware.csproj", "{DAD7F753-3A79-42DF-A9B4-A127FA46CB1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Middleware", "HealthChecker.Middleware\HealthChecker.Middleware.csproj", "{DAD7F753-3A79-42DF-A9B4-A127FA46CB1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Middleware.Tests", "HealthChecker.Middleware.Tests\HealthChecker.Middleware.Tests.csproj", "{9062B132-C6AB-40AB-A657-BAEEFE69D7E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Middleware.Tests", "HealthChecker.Middleware.Tests\HealthChecker.Middleware.Tests.csproj", "{9062B132-C6AB-40AB-A657-BAEEFE69D7E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Data", "HealthChecker.Data\HealthChecker.Data.csproj", "{78959D03-94E6-401D-AC92-D3AC8CEC869E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9062B132-C6AB-40AB-A657-BAEEFE69D7E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9062B132-C6AB-40AB-A657-BAEEFE69D7E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9062B132-C6AB-40AB-A657-BAEEFE69D7E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78959D03-94E6-401D-AC92-D3AC8CEC869E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78959D03-94E6-401D-AC92-D3AC8CEC869E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78959D03-94E6-401D-AC92-D3AC8CEC869E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78959D03-94E6-401D-AC92-D3AC8CEC869E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
