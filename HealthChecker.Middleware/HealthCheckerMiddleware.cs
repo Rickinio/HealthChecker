@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using HealthChecker.Middleware.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -23,7 +26,7 @@ namespace HealthChecker.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            if (context.Request.Path.StartsWithSegments(_options.Path))
+            if (context.Request.Path.StartsWithSegments($"{_options.Path}/{_options.ObscurePath}".TrimEnd('/')))
             {
                 _logger.LogInformation("Healthcheck requested: " + context.Request.Path);
 
@@ -32,22 +35,37 @@ namespace HealthChecker.Middleware
                     .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
                     .InformationalVersion;
 
-                if (string.IsNullOrEmpty(_options.App))
+                if (string.IsNullOrEmpty(_options.ApplicationName))
                 {
-                    _options.App = assembly.GetName().Name;
+                    _options.ApplicationName = assembly.GetName().Name;
                 }
 
-                var response = new
+                var response = new List<HealthCheckerResult>()
                 {
-                    Message = _options.Message,
-                    Version = appVersion,
-                    App = _options.App
+                    new HealthCheckerResult()
+                    {
+                        Application = _options.ApplicationName,
+                        TestMethod = "ApplicationIsAlive",
+                    }
                 };
 
+                foreach (var testMethod in _options.TestActions)
+                {
+                    var healthCheckResult = new HealthCheckerResult() {Application = _options.ApplicationName,TestMethod = testMethod.Name };
+                    try
+                    {
+                        testMethod.Action.Invoke();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        healthCheckResult.HasError = true;
+                        healthCheckResult.Exception = ex;
+                    }
+                    response.Add(healthCheckResult);
+                }
+
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(response, new JsonSerializerSettings() { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
-
-
-
             }
             else
             {
@@ -62,18 +80,5 @@ namespace HealthChecker.Middleware
         {
             return builder.UseMiddleware<HealthCheckerMiddleware>(options);
         }
-    }
-
-    public class HealthCheckerOptions
-    {
-        public HealthCheckerOptions()
-        {
-            Path = "/healthcheck";
-            Message = "i am alive!";
-        }
-
-        public string Path { get; set; }
-        public string Message { get; set; }
-        public string App { get; set; }
     }
 }
