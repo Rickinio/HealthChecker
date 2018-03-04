@@ -15,7 +15,7 @@ namespace HealthChecker.Data
             }
         }
 
-        public async Task<Application> GetApplicationById(int applicationId)
+        public async Task<Application> GetApplicationById(long applicationId)
         {
             using (var context = new HealthCheckerContext())
             {
