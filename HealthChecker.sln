@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Implementatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Implementation.Tests", "HealthChecker.Implementation.Tests\HealthChecker.Implementation.Tests.csproj", "{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Host.Console", "HealthChecker.Host.Console\HealthChecker.Host.Console.csproj", "{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

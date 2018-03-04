@@ -20,15 +20,18 @@ namespace HealthChecker.Models
                 traceString.AppendLine($"Exception: {m}");
             });
 
-            foreach (var frame in frames)
+            if (frames != null)
             {
-                if (frame.GetFileLineNumber() < 1)
-                    continue;
+                foreach (var frame in frames)
+                {
+                    if (frame.GetFileLineNumber() < 1)
+                        continue;
 
-                traceString.AppendLine("File: " + frame.GetFileName());
-                traceString.AppendLine("Method:" + frame.GetMethod().Name);
-                traceString.AppendLine("LineNumber: " + frame.GetFileLineNumber());
-                traceString.AppendLine(" <-- -->  ");
+                    traceString.AppendLine("File: " + frame.GetFileName());
+                    traceString.AppendLine("Method:" + frame.GetMethod().Name);
+                    traceString.AppendLine("LineNumber: " + frame.GetFileLineNumber());
+                    traceString.AppendLine(" <-- -->  ");
+                }
             }
 
             return traceString.ToString();
@@ -37,11 +40,11 @@ namespace HealthChecker.Models
         public static List<string> Messages(this Exception ex)
         {
             List<string> messages = new List<string>();
-            
+
             if (ex == null) { return messages; };
-            
+
             messages.Add(ex.Message);
-            
+
             IEnumerable<Exception> innerExceptions = Enumerable.Empty<Exception>();
 
             if (ex is AggregateException && (ex as AggregateException).InnerExceptions.Any())

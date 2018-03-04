@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "HealthChecker.Host.Console": {
+      "commandName": "Project"
+    }
+  }
+}
