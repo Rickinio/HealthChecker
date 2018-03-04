@@ -1,4 +1,5 @@
 ﻿using HealthChecker.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -6,6 +7,14 @@ namespace HealthChecker.Data
 {
     public class HealthCheckerRepository
     {
+        public List<Application> GetAllApplications()
+        {
+            using (var context = new HealthCheckerContext())
+            {
+                return context.Applications.ToList();
+            }
+        }
+
         public async Task<Application> GetApplicationById(int applicationId)
         {
             using (var context = new HealthCheckerContext())

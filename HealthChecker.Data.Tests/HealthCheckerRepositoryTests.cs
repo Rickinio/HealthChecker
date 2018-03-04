@@ -10,7 +10,11 @@ namespace HealthChecker.Data.Tests
         public async void InvokeTest_AddApplication_ReturnsSuccess()
         {
             //Arrange
-            var application = new Application() { Name = "TestApp", Url = "https://localhost/healthchecker", Interval = 3600 };
+            var application = new Application() {
+                Name = "TestApp",
+                Url = "https://localhost:26749/healthchecker/CC61205F-1D1F-40E5-929B-B2E1895FDFD0",
+                Interval = 3600,
+            };
             var repository = new HealthCheckerRepository();
 
             //Act 

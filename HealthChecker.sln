@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Models", "Hea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.TestCoreWebApp", "HealthChecker.TestCoreWebApp\HealthChecker.TestCoreWebApp.csproj", "{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Implementation", "HealthChecker.Implementation\HealthChecker.Implementation.csproj", "{F69E317A-197C-4AFB-971F-F10A4A58F071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Implementation.Tests", "HealthChecker.Implementation.Tests\HealthChecker.Implementation.Tests.csproj", "{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69E317A-197C-4AFB-971F-F10A4A58F071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69E317A-197C-4AFB-971F-F10A4A58F071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69E317A-197C-4AFB-971F-F10A4A58F071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69E317A-197C-4AFB-971F-F10A4A58F071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

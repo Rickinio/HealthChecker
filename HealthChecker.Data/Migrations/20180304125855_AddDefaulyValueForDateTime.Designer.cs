@@ -11,9 +11,10 @@ using System;
 namespace HealthChecker.Data.Migrations
 {
     [DbContext(typeof(HealthCheckerContext))]
-    partial class HealthCheckerContextModelSnapshot : ModelSnapshot
+    [Migration("20180304125855_AddDefaulyValueForDateTime")]
+    partial class AddDefaulyValueForDateTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

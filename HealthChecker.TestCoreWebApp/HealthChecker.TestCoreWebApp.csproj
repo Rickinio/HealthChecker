@@ -9,6 +9,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HealthChecker.Data\HealthChecker.Data.csproj" />
     <ProjectReference Include="..\HealthChecker.Middleware\HealthChecker.Middleware.csproj" />
   </ItemGroup>
 </Project>
