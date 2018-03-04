@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Data", "Healt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Data.Tests", "HealthChecker.Data.Tests\HealthChecker.Data.Tests.csproj", "{2C062DFE-881D-4A60-9BF4-9D504B5B1D6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Models", "HealthChecker.Models\HealthChecker.Models.csproj", "{1A0D801C-30EF-4AF5-A31E-1AB684E5304B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Models", "HealthChecker.Models\HealthChecker.Models.csproj", "{1A0D801C-30EF-4AF5-A31E-1AB684E5304B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.TestCoreWebApp", "HealthChecker.TestCoreWebApp\HealthChecker.TestCoreWebApp.csproj", "{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1A0D801C-30EF-4AF5-A31E-1AB684E5304B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A0D801C-30EF-4AF5-A31E-1AB684E5304B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A0D801C-30EF-4AF5-A31E-1AB684E5304B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

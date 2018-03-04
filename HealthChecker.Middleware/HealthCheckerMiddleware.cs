@@ -64,7 +64,7 @@ namespace HealthChecker.Middleware
                         healthCheckResult.HasError = true;
                         healthCheckResult.Exception = ex;
                     }
-                    healthCheckResult.ExecutedIn = stopwatch.Elapsed.TotalSeconds;
+                    healthCheckResult.ExecutedIn = stopwatch.Elapsed.TotalMilliseconds;
                     stopwatch.Reset();
                     response.Add(healthCheckResult);
                 }
