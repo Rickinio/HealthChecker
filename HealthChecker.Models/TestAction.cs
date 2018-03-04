@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HealthChecker.Middleware.Models
+namespace HealthChecker.Models
 {
     public class TestAction
     {

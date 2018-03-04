@@ -1,4 +1,4 @@
-﻿using HealthChecker.Middleware.Models;
+﻿using HealthChecker.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -52,16 +53,19 @@ namespace HealthChecker.Middleware
                 foreach (var testMethod in _options.TestActions)
                 {
                     var healthCheckResult = new HealthCheckerResult() {Application = _options.ApplicationName,TestMethod = testMethod.Name };
+                    var stopwatch = new Stopwatch();
                     try
                     {
+                        stopwatch.Start();
                         testMethod.Action.Invoke();
-
                     }
                     catch (Exception ex)
                     {
                         healthCheckResult.HasError = true;
                         healthCheckResult.Exception = ex;
                     }
+                    healthCheckResult.ExecutedIn = stopwatch.Elapsed.TotalSeconds;
+                    stopwatch.Reset();
                     response.Add(healthCheckResult);
                 }
 

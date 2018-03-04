@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HealthChecker.Middleware.Models
+namespace HealthChecker.Models
 {
     public class HealthCheckerOptions
     {

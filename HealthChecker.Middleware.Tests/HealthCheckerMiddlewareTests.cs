@@ -1,8 +1,9 @@
 using FluentAssertions;
-using HealthChecker.Middleware.Models;
+using HealthChecker.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -11,7 +12,7 @@ using Xunit;
 
 namespace HealthChecker.Middleware.Tests
 {
-    public class Tests
+    public class HealthCheckerMiddlewareTests
     {
         [Fact]
         public void NewOptions_CreatesOptions()
@@ -40,8 +41,7 @@ namespace HealthChecker.Middleware.Tests
 
             //Assert
             var result = responseMessage.Content.ReadAsStringAsync().Result;
-            var expected = "[{\"application\":\"testhost\",\"testMethod\":\"ApplicationIsAlive\",\"hasError\":false,\"exception\":null}]";
-            result.Should().Match(expected);
+            result.Should().Contain(@"testMethod"":""ApplicationIsAlive");
         }
 
         [Fact]
@@ -64,8 +64,7 @@ namespace HealthChecker.Middleware.Tests
 
             //Assert
             var result = responseMessage.Content.ReadAsStringAsync().Result;
-            var expected = "[{\"application\":\"testhost\",\"testMethod\":\"ApplicationIsAlive\",\"hasError\":false,\"exception\":null}]";
-            result.Should().Match(expected);
+            result.Should().Contain(@"testMethod"":""ApplicationIsAlive");
 
         }
 
@@ -94,8 +93,6 @@ namespace HealthChecker.Middleware.Tests
         [Fact]
         public async void InvokeTest_GivenOptionsThatAddActions_ReturnsSuccessForExecutionActions()
         {
-            var expected = "[{\"application\":\"SomeApp\",\"testMethod\":\"ApplicationIsAlive\",\"hasError\":false,\"exception\":null},{\"application\":\"SomeApp\",\"testMethod\":\"testMethod1\",\"hasError\":false,\"exception\":null},{\"application\":\"SomeApp\",\"testMethod\":\"testMethod2\",\"hasError\":false,\"exception\":null}]";
-
             //Arrange
             Action testMethod1 = () => { };
             Action testMethod2 = () => { };
@@ -121,8 +118,7 @@ namespace HealthChecker.Middleware.Tests
 
             //Assert
             var result = responseMessage.Content.ReadAsStringAsync().Result;
-
-            result.Should().Match(expected);
+            result.Should().Contain(@"testMethod"":""testMethod1");
         }
 
         [Fact]
@@ -153,8 +149,7 @@ namespace HealthChecker.Middleware.Tests
 
             //Assert
             var result = responseMessage.Content.ReadAsStringAsync().Result;
-
-            result.Contains(@"Message"":""Custom Exception Message");
+            result.Should().Contain(@"Message"":""Custom Exception Message");
         }
     }
 }

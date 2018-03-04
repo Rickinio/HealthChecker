@@ -1,15 +1,12 @@
-﻿using HealthChecker.Data.Models;
-using System;
-using System.Collections.Generic;
+﻿using HealthChecker.Models;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HealthChecker.Data
 {
     public class HealthCheckerRepository
     {
-        public async Task<Application> GetById(int applicationId)
+        public async Task<Application> GetApplicationById(int applicationId)
         {
             using (var context = new HealthCheckerContext())
             {
@@ -17,7 +14,7 @@ namespace HealthChecker.Data
             }
         }
 
-        public async Task<Application> GetByName(string applicationName)
+        public Application GetApplicationByName(string applicationName)
         {
             using (var context = new HealthCheckerContext())
             {
@@ -25,26 +22,30 @@ namespace HealthChecker.Data
             }
         }
 
-        public async Task Add(Application application)
+        public async Task<Application> AddApplication(Application application)
         {
             using (var context = new HealthCheckerContext())
             {
                 context.Applications.Add(application);
                 await context.SaveChangesAsync();
+
+                return application;
             }
         }
 
-        public async Task Update(Application application)
+        public async Task<Application> UpdateApplication(Application application)
         {
             using (var context = new HealthCheckerContext())
             {
                 var dbApplication = context.Applications.Find(application.ApplicationId);
                 context.Entry(dbApplication).CurrentValues.SetValues(application);
                 await context.SaveChangesAsync();
+
+                return application;
             }
         }
 
-        public async Task Delete(Application application)
+        public async Task DeleteApplication(Application application)
         {
             using (var context = new HealthCheckerContext())
             {
