@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Data.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Models", "HealthChecker.Models\HealthChecker.Models.csproj", "{1A0D801C-30EF-4AF5-A31E-1AB684E5304B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.TestCoreWebApp", "HealthChecker.TestCoreWebApp\HealthChecker.TestCoreWebApp.csproj", "{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.TestCoreWebApp", "HealthChecker.TestCoreWebApp\HealthChecker.TestCoreWebApp.csproj", "{CDD4BE9E-1F8A-4196-8FFC-4EC7F15E99AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Implementation", "HealthChecker.Implementation\HealthChecker.Implementation.csproj", "{F69E317A-197C-4AFB-971F-F10A4A58F071}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Implementation", "HealthChecker.Implementation\HealthChecker.Implementation.csproj", "{F69E317A-197C-4AFB-971F-F10A4A58F071}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Implementation.Tests", "HealthChecker.Implementation.Tests\HealthChecker.Implementation.Tests.csproj", "{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Implementation.Tests", "HealthChecker.Implementation.Tests\HealthChecker.Implementation.Tests.csproj", "{ABEABDB3-4D09-4D90-988C-6EBE52B7E670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.Host.Console", "HealthChecker.Host.Console\HealthChecker.Host.Console.csproj", "{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecker.Host.Console", "HealthChecker.Host.Console\HealthChecker.Host.Console.csproj", "{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecker.UI", "HealthChecker.UI\HealthChecker.UI.csproj", "{B070DD9F-D71B-4E74-AA56-5B252C980A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141C7D5D-6E4E-43D4-A2C3-9062D52CB991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B070DD9F-D71B-4E74-AA56-5B252C980A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B070DD9F-D71B-4E74-AA56-5B252C980A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B070DD9F-D71B-4E74-AA56-5B252C980A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B070DD9F-D71B-4E74-AA56-5B252C980A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
